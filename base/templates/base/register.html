@@ -1,0 +1,34 @@
+{% extends 'base/work.html' %}
+{% block content %}
+
+
+
+<div class="header-bar">
+    <h1><b style="color:white;">Register</b></h1>
+</div>
+
+<div class="card-body">
+    <form method="POST">
+        {% csrf_token %}
+       <b> <label>{{form.username.label}}</label></b>
+        {{form.username}}
+
+         
+        <b><label><h5>Use at least 8 characters also use at least 3 of the following: 
+                uppercase, lowercase, numeric, or special characters.</h5>{{form.password1.label}}</label></b>
+        {{form.password1}}
+
+        
+            <b> <label>{{form.password2.label}}</label></b>
+        {{form.password2}}
+        
+        <input style="margin-top:10px ;" class="button" type="submit" value="Register">
+    </form>
+    <br>
+    <b>Already have an account? <a href="{% url 'login' %}">Login</a></b>
+</div>
+
+
+
+
+{% endblock content %}

@@ -1,0 +1,21 @@
+{% extends 'base/work.html' %}
+{% block content %}
+
+
+
+
+<div class="header-bar">
+   <b style="color:Black;"><a href="{% url 'tasks' %}">&#8592; Back</a></b> 
+</div>
+
+
+<div class="card-body">
+    <form method="POST" action="">
+       <b>{% csrf_token %}</b> 
+       <b>{{form.as_p}}</b> 
+        <input class="button" type="submit" value="Submit">
+    </form>
+</div>
+
+
+{% endblock content %}
